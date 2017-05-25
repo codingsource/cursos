@@ -1,2 +1,2 @@
-# cursos
-Cursos Alura
+# Cursos
+* Cursos Alura *
