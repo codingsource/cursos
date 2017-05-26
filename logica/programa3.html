@@ -4,19 +4,15 @@
     var ano = 2016;
 
     function pulaLinha() {
-        document.write("<br>");
+        document.write("<br><hr><br>");
     }
 
     function mostra(frase) {
-        document.write(frase);
+        document.write("<big>" + frase + "</big>");
         pulaLinha();
     }
 
-    mostra("Flávio nasceu em " + (ano - 25) + " anos");
-    mostra("Joaquim nasceu em " + (ano - 26) + " anos");
-
-    ano = 2017;
-    mostra("Barney nasceu em " + (ano - 32) + " anos");
-
-    mostra("Hello guys")
+    mostra("Flávio nasceu em " + (ano - 25));
+    mostra("Joaquim nasceu em " + (ano - 26));
+    mostra("Barney nasceu em " + (ano - 32));
 </script>
