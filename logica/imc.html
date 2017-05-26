@@ -18,5 +18,28 @@
     var pesoInformado = prompt("Informeo seu peso");
     var alturaIformada = prompt("Informe sua altura");
 
-    mostra("O Imc é: "  + calculoIMC(pesoInformado, alturaIformada));
+    var totalImc = calculoIMC(pesoInformado, alturaIformada);
+
+    mostra("O Imc é: " + totalImc);
+
+    if (totalImc < 18.5) {
+        mostra("Seu IMC indica que você está abaixo do peso recomendado!");
+    }
+    if (totalImc > 35) {
+        mostra("Seu IMC indica que você está com peso acima do recomendado!");
+    }
+    if (totalImc >= 18.5 && totalImc <= 35) {
+        mostra("Seu IMC está excelente!");
+    }
+
+    var numero = 10;
+
+    if (numero >= 2 && numero < 12) {
+
+        alert("A ENTROU!");
+    }
+    if (numero >= 10) {
+
+        alert("C ENTROU!");
+    }
 </script>
