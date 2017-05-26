@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+    var minhaIdade = 27;
+    var idadeIrmao = 12;
+
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaDiferencaDeIdade(minhaIdade, idadeIrmao) {
+       return "A diferença entre as idades são: " + (minhaIdade - idadeIrmao);
+    }
+
+    mostra(calculaDiferencaDeIdade(minhaIdade, idadeIrmao));
+</script>

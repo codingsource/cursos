@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+<script>
+    var anoAtual = 2017;
+    var anoDecobrimento = 1500;
+    var cicloDeGeracao = 28;
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    mostra("Total das gerações:" + Math.round((anoAtual - anoDecobrimento) / cicloDeGeracao));
+
+</script>
