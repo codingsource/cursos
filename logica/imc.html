@@ -1,7 +1,6 @@
 <meta charset="UTF-8">
 
 <script>
-
     function pulaLinha() {
         document.write("<br>");
         document.write("<br>");
@@ -12,10 +11,10 @@
         pulaLinha();
     }
 
-    var peso = 70;
-    var altura = 1.79;
-    var imc = Math.round(peso / (altura * altura)); 
+    function calculoIMC(peso, altura) {
+        var imc = Math.round(peso / (altura * altura));
+        mostra("O imc é: " + imc);
+    }
 
-    mostra("O imc é: " + imc);
-
+    calculoIMC(75, 1.89);
 </script>
