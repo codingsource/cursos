@@ -4,7 +4,14 @@
 <button>Compare com o meu segredo</button>
 
 <script>
-    var segredos = [5, 7, 10, 2];
+    var segredos = [9];
+
+    for (var i = 0; i < array.length; i++) {
+        var numeroAleatorios = Math.round(Math.random() * 30);
+        if (segredos.indexOf(numeroAleatorios)) {
+            segredos[i] = numeroAleatorios;
+        }        
+    }
 
     var input = document.querySelector("input");
     input.focus();
