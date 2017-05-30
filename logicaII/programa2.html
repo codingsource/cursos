@@ -1,13 +1,23 @@
 <canvas id="tela" width="600" height="400"></canvas>
 
 <script>
-    function desenhaQuadradoVerde(x, y) {
-        var tela = document.querySelector('#tela');
+    function desenhaQuadradoVerde(x, y, cor) {
+        var tela = document.querySelector('canvas');
         var pincel = tela.getContext('2d');
 
-        pincel.fillStyle = 'green';
+        pincel.fillStyle = cor;
         pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, 50, 50);
     }
 
-    desenhaQuadradoVerde(0, 0);   
+    desenhaQuadradoVerde(0, 0, 'black');
+    desenhaQuadradoVerde(0, 50, 'gray');
+    desenhaQuadradoVerde(0, 100, 'blue');
+
+
+    desenhaQuadradoVerde(0, 0, 'yellow');
+    desenhaQuadradoVerde(50, 0, 'green');
+    desenhaQuadradoVerde(100, 0, 'purple');
 </script>
