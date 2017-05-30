@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var idade = parseInt(prompt("Qual é sua idade"));
+
+    if (idade >= 18) {
+        var temCarteira = prompt("Tem carteira? Responda S ou N").toUpperCase();
+        if(temCarteira == "S" ){
+            mostra("Olha você já tem 18 anos e carteira. Você pode dirigir!");
+        }else {
+            mostra("Você tem até idade suficiente mais não pode digirir por que ainda não tem carteira!");
+        }
+    } else {
+        mostra("Você não pode digirir você ainda não tem idade sufuciente!");
+    }
+</script>

@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function mostra(frase) {
+        document.write(frase + "<br/>");
+    }
+
+    var anoCopa = parseInt(prompt("Informe ano inicial?"));
+    var limite = prompt("Qual é o ano limite?");
+
+    while(anoCopa <= limite) {
+        mostra(anoCopa + " tem copa!");
+        anoCopa = anoCopa + 4;
+    }
+
+    mostra("Esses foram os anos de copa até 2014");
+</script>

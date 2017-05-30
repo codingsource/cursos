@@ -1,6 +1,5 @@
 <meta charset="UTF-8">
 <script>
-
     function pulaLinha() {
         document.write("<br>");
         document.write("<br>");
@@ -11,14 +10,23 @@
         pulaLinha();
     }
 
-    var numeroPensado = Math.round(Math.random() * 100);
-    var chute =  parseInt(prompt("Já pensei. Qual você acha que é: "));
-
-    if (numeroPensado == chute) {
-        mostra("Uau! VOcê acertou, pois eu pensei no " + numeroPensado);
-    }
-    if (chute != numeroPensado) {
-        mostra("Você errou! Eu tinha pensado no " + numeroPensado);
+    function sorteia(valor) {
+        return Math.round(Math.random() * valor);
     }
 
+    var maximoTentativa = 3;
+    var n = parseInt(prompt("Até que número posso penssar? Hum de 0 a ...? "));
+    var numeroPensado = sorteia(n);
+
+    while (maximoTentativa >= 1) {
+        var chute = parseInt(prompt("Já pensei. Qual você acha que é: "));
+        
+        if (numeroPensado == chute) {
+            mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+            break;
+        } else {
+            mostra("Você errou!");
+        }
+        maximoTentativa--;
+    }
 </script>

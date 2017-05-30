@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var qntFamiliares = parseInt(prompt("Digite a quantidade de familiares!"));
+    var somaDasIdade = 0;
+    var count = qntFamiliares;
+
+    while (count >= 1) {
+        somaDasIdade += parseInt(prompt("Digite a idade dos familiares"));
+        count--;
+    }
+
+    mostra("Media dos familiares " + (somaDasIdade / qntFamiliares));
+
+</script>
