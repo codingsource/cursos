@@ -1,23 +1,49 @@
 <canvas id="tela" width="600" height="400"></canvas>
 
 <script>
-    function desenhaQuadradoVerde(x, y, cor) {
+    function desenhaQuadrado(x, y, cor, borda) {
+        
         var tela = document.querySelector('canvas');
         var pincel = tela.getContext('2d');
 
         pincel.fillStyle = cor;
         pincel.fillRect(x, y, 50, 50);
 
-        pincel.strokeStyle = 'black';
+        pincel.strokeStyle = borda;
         pincel.strokeRect(x, y, 50, 50);
     }
 
-    desenhaQuadradoVerde(0, 0, 'black');
-    desenhaQuadradoVerde(0, 50, 'gray');
-    desenhaQuadradoVerde(0, 100, 'blue');
+    function desenhacirculo(x, y, raio, cor) {
 
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
 
-    desenhaQuadradoVerde(0, 0, 'yellow');
-    desenhaQuadradoVerde(50, 0, 'green');
-    desenhaQuadradoVerde(100, 0, 'purple');
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function desenhaFlor(centerCor1, cor2, cor3, cor4, cor5) {
+        desenhacirculo(300, 200, 10, centerCor1);
+        desenhacirculo(300, 170, 10, cor2);
+        desenhacirculo(330, 200, 10, cor3);
+
+        desenhacirculo(270, 200, 10, cor4);
+        desenhacirculo(300, 230, 10, cor5);
+    }
+
+    var x = 0;
+    while (x < 600) {
+        desenhacirculo(100, 200, 40, 'lightblue');
+        desenhacirculo(100, 200, 30, 'green');
+        desenhacirculo(100, 200, 20, 'white');
+        desenhacirculo(100, 200, 10, 'red');
+        desenhacirculo(100, 200, 3, 'yellow');
+
+        desenhaFlor('yellow', 'blue', 'purple', 'red', 'orange');
+
+        desenhaQuadrado((x * 10), (x * 3), 'green');
+        x += 4.11;
+    }
 </script>
