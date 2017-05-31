@@ -2,7 +2,7 @@
 
 <script>
     function desenhaQuadrado(x, y, cor, borda) {
-        
+
         var tela = document.querySelector('canvas');
         var pincel = tela.getContext('2d');
 
@@ -24,13 +24,13 @@
         pincel.fill();
     }
 
-    function desenhaFlor(centerCor1, cor2, cor3, cor4, cor5) {
-        desenhacirculo(300, 200, 10, centerCor1);
-        desenhacirculo(300, 170, 10, cor2);
-        desenhacirculo(330, 200, 10, cor3);
+    function desenhaFlor(x, y, centerCor1, cor2, cor3, cor4, cor5) {
+        desenhacirculo(x, y + 20, 10, centerCor1);
+        desenhacirculo(x, y, 10, cor2);
+        desenhacirculo(x, y - 20, 10, cor3);
 
-        desenhacirculo(270, 200, 10, cor4);
-        desenhacirculo(300, 230, 10, cor5);
+        desenhacirculo(x + 20, y, 10, cor4);
+        desenhacirculo(x - 20, y, 10, cor5);
     }
 
     var x = 0;
@@ -41,7 +41,7 @@
         desenhacirculo(100, 200, 10, 'red');
         desenhacirculo(100, 200, 3, 'yellow');
 
-        desenhaFlor('yellow', 'blue', 'purple', 'red', 'orange');
+        desenhaFlor(300, 200, 'yellow', 'blue', 'purple', 'red', 'orange');
 
         desenhaQuadrado((x * 10), (x * 3), 'green');
         x += 4.11;
