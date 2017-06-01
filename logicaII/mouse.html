@@ -17,16 +17,13 @@
 
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
-        
 
         if(evento.shiftKey && raio <= 35) {
             raio += incremento;
-            console.log(' + :' + raio);
         }
 
         if(evento.altKey && raio >= 10) {
             raio -= incremento;
-            console.log(' - : ' + raio);
         }
 
         pincel.fillStyle = cores[indiceCorAtual];
@@ -35,18 +32,29 @@
         pincel.fill();
     }
 
-    tela.onclick = desenhaCirculo;
-
     function mudaCor() {
         indiceCorAtual++;
-        console.log(indiceCorAtual);
 
         if (indiceCorAtual >= cores.length) {
             indiceCorAtual = 0;
         }
         return false;
     }
+
+    function habilitaDesenhar() {
+        tela.onmousemove = desenhaCirculo;
+    }
+
+    function desabilitaDesenhar() {
+        tela.onmousemove = false;
+    }
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
     
+    tela.onclick = desenhaCirculo;
+
     tela.oncontextmenu = mudaCor;
 
 </script>
