@@ -11,6 +11,7 @@
     var cores = ['blue', 'red', 'green'];
     var indiceCorAtual = 0;
     var raio = 10;
+    var incremento = 5;
 
     function desenhaCirculo(evento) {
 
@@ -18,8 +19,14 @@
         var y = evento.pageY - tela.offsetTop;
         
 
-        if(evento.shiftKey) {
-            raio += 10;
+        if(evento.shiftKey && raio <= 35) {
+            raio += incremento;
+            console.log(' + :' + raio);
+        }
+
+        if(evento.altKey && raio >= 10) {
+            raio -= incremento;
+            console.log(' - : ' + raio);
         }
 
         pincel.fillStyle = cores[indiceCorAtual];
