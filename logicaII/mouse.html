@@ -1,13 +1,12 @@
 <canvas id="tela" width="600" height="400"></canvas>
 
 <script>
-
     var tela = document.querySelector('#tela');
     var pincel = tela.getContext('2d');
 
-    pincel.fillStyle='grey';
+    pincel.fillStyle = 'grey';
     pincel.fillRect(0, 0, 600, 400);
-    
+
     var cores = ['blue', 'red', 'green'];
     var indiceCorAtual = 0;
     var raio = 10;
@@ -18,11 +17,11 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if(evento.shiftKey && raio <= 35) {
+        if (evento.shiftKey && raio <= 35) {
             raio += incremento;
         }
 
-        if(evento.altKey && raio >= 10) {
+        if (evento.altKey && raio >= 10) {
             raio -= incremento;
         }
 
@@ -41,6 +40,7 @@
         return false;
     }
 
+
     function habilitaDesenhar() {
         tela.onmousemove = desenhaCirculo;
     }
@@ -52,9 +52,8 @@
     tela.onmousedown = habilitaDesenhar;
 
     tela.onmouseup = desabilitaDesenhar;
-    
+
     tela.onclick = desenhaCirculo;
 
     tela.oncontextmenu = mudaCor;
-
 </script>
