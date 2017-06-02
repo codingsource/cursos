@@ -1,4 +1,5 @@
 <canvas id="tela" width="600" height="400"></canvas>
+<br> Escolha uma cor <input type="color">
 
 <script>
     var tela = document.querySelector('#tela');
@@ -7,12 +8,15 @@
     pincel.fillStyle = 'grey';
     pincel.fillRect(0, 0, 600, 400);
 
-    var cores = ['blue', 'red', 'green'];
+    var colors = [];
+    var color;
+
     var indiceCorAtual = 0;
     var raio = 10;
     var incremento = 5;
 
     function desenhaCirculo(evento) {
+        color = document.querySelector('input').value;
 
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
@@ -25,18 +29,27 @@
             raio -= incremento;
         }
 
-        pincel.fillStyle = cores[indiceCorAtual];
+        pincel.fillStyle = colors[indiceCorAtual];
         pincel.beginPath();
         pincel.arc(x, y, raio, 0, 2 * Math.PI);
         pincel.fill();
     }
 
     tela.oncontextmenu = function () {
-        indiceCorAtual++;
 
-        if (indiceCorAtual >= cores.length) {
+        if (colors.indexOf(color) === -1 && color) {
+            colors.push(color);
+            indiceCorAtual++;
+            console.log('Cor adicionada: colors[' + colors + ']');
+        } else if (colors.indexOf(color) > -1) {
+            console.log('Cor já existe no array: ' + color);
+        }
+
+        if (indiceCorAtual >= colors.length) {
             indiceCorAtual = 0;
         }
+
+        console.log(colors.length);
         return false;
     }
 
@@ -49,5 +62,4 @@
     tela.onmouseup = function () {
         tela.onmousemove = false;
     }
-
 </script>
