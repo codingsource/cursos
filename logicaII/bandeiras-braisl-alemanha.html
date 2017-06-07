@@ -50,12 +50,12 @@
     function trocaBandeira() {
 
         if (mostraBrasil) {
-            desenhaBandeiraAlemanha();
-            mostraBrasil = false;
-        }else {
             desenhaBandeiraBrasil();
-            mostraBrasil = true;
+        }else {
+            desenhaBandeiraAlemanha();
         }
+
+        mostraBrasil = !mostraBrasil;
     }
     
     setInterval(trocaBandeira, 3000);
