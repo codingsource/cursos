@@ -1,0 +1,22 @@
+<script>
+    var vegetais = ['batata', 'tomate', 'pimenta', 'pimentao'];
+    // function atualizarColecaoVegetais(vegetais, vegetal) {
+    for (var index = 0; index < vegetais.length; index++) {
+
+        if (vegetais.indexOf('espinafre') === -1) {
+            vegetais.push('espinafre');
+            console.log(vegetais);
+
+        } 
+        if (vegetais.indexOf('espinafre') > -1) {
+            console.log('espinafre' + ' já existe na coleção de vegetais.');
+        }
+    }
+    // }
+
+
+    // atualizarColecaoVegetais(vegetais, 'espinafre');
+    // Nova coleção de vegatais é : batata,tomate,pimenta,pimentao,espinafre
+    // atualizarColecaoVegetais(vegetais, 'espinafre');
+    // espinafre já existe na coleção de vegetais.
+</script>

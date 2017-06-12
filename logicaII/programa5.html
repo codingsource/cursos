@@ -1,0 +1,76 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    tela.setAttribute('width', width);
+    tela.setAttribute('height', height);
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, width, height);
+
+    var raio = 10;
+    var positionX;
+    var positionY;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+        pincel.clearRect(0, 0, width, height);
+    }
+
+    function getRandomInt(maximo) {
+        return Math.floor(Math.random() * maximo);
+    }
+
+    function desenhaAlvo() {
+
+        positionX = getRandomInt(width);
+        positionY = getRandomInt(height);
+
+        limpaTela();
+        desenhaCirculo(positionX, positionY, raio + 20, 'red'); // maior círculo
+        desenhaCirculo(positionX, positionY, raio + 10, 'white');
+        desenhaCirculo(positionX, positionY, raio, 'red'); // menor circulo
+        desenhaCirculo(positionX, positionY, raio - 6, 'white');
+
+    }
+
+    setInterval(desenhaAlvo, 800)
+
+
+    function dispara(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        // lógica de acerto?
+        if (x > positionX - raio &&
+            x < positionX + raio &&
+            y > positionY - raio &&
+            y < positionY + raio) {
+            alert('acertou no alvo 100pts');
+        }
+        //     } else if (x > positionX - (raio * 2) &&
+        //         x < positionX + (raio * 2) &&
+        //         y > positionY - (raio * 2) &&
+        //         y < positionY + (raio * 2)) {
+        //         alert('Quase leva 50pts');
+        //     } else if (x > positionX - (raio * 3) &&
+        //         x < positionX + (raio * 3) &&
+        //         y > positionY - (raio * 3) &&
+        //         y < positionY + ((raio * 3))) {
+        //         alert('pratique um pouco mais 10pts');
+        //     }
+    }
+    tela.onclick = dispara;
+</script>
