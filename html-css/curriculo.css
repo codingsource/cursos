@@ -1,13 +1,28 @@
- h2 {
-     color: #DDDDDD;
-     background: #5599DD;
- }
- 
- .exp { 
-     text-indent: 50px;
- }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
- #email {
-     text-decoration: underline;
-     font-style: italic;
- }    
+h2 {
+    color: #DDDDDD;
+    background: #5599DD;
+    padding: 5px;
+}
+
+.exp {
+    text-indent: 50px;
+}
+
+#email {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#header {
+    text-align: center;
+}
+
+#conteudo {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
